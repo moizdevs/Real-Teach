@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath fill=%27%23ffb400%27 d=%27M13 2 4 14h6l-1 8 9-12h-6z%27/%3E%3C/svg%3E"
+    />
+    <title>Real Tech — Inverter Sales, Buying & Repair, Faisalabad</title>
+    <meta
+      name="description"
+      content="Real Tech buys, sells and repairs inverters near Jhang Road, Faisalabad."
+    />
+    <meta name="theme-color" content="#06070a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./vendor/three.module.js",
+          "three/addons/": "./vendor/addons/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="loader">
+      <div style="text-align: center">
+        <div class="mark">Real <b>Tech</b></div>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
+
+    <nav id="nav">
+      <a class="brand" href="#top" aria-label="Real Tech home">
+        <svg class="bolt" viewBox="0 0 24 24" fill="#ffb400">
+          <path d="M13 2 4 14h6l-1 8 9-12h-6z" />
+        </svg>
+        <span>Real <b>Tech</b></span>
+      </a>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#faults">Repairs</a>
+        <a href="#visit">Visit</a>
+        <a
+          class="btn pri sm"
+          href="https://wa.me/923006284960?utm_source=chatgpt.com"
+          data-contact="wa"
+          >WhatsApp</a
+        >
+      </div>
+    </nav>
+
+    <!-- ================= SCROLL FILM ================= -->
+    <div id="top"></div>
+    <div id="film">
+      <div class="stage">
+        <canvas
+          id="gl"
+          aria-label="Interactive 3D inverter that opens up as you scroll"
+        ></canvas>
+        <div class="grain"></div>
+
+        <div class="cap hero" data-in="-0.05" data-hold="0.05" data-out="0.12">
+          <h1>Real <em>Tech</em></h1>
+          <p>
+            Inverters — bought, sold &amp; repaired. Near Jhang Road,
+            Faisalabad.
+          </p>
+        </div>
+
+        <div class="cap l" data-in="0.15" data-hold="0.07" data-out="0.27">
+          <div class="kick">01 — Sell</div>
+          <h2>Power that<br />stays on.</h2>
+          <p>
+            New and used inverters, tested under load before they ever leave our
+            shop.
+          </p>
+        </div>
+
+        <div class="cap r" data-in="0.30" data-hold="0.06" data-out="0.41">
+          <div class="kick">02 — Buy</div>
+          <h2>Your old<br />one? Sell it.</h2>
+          <p>
+            Faulty, working or upgraded out — bring it in and get a straight
+            offer.
+          </p>
+        </div>
+
+        <div class="cap l" data-in="0.44" data-hold="0.06" data-out="0.56">
+          <div class="kick">03 — Inside</div>
+          <h2>We open<br />it up.</h2>
+          <p>
+            Board, coil, capacitors, fan. Every part laid bare — no guessing
+            from the outside.
+          </p>
+        </div>
+
+        <div class="cap r" data-in="0.58" data-hold="0.05" data-out="0.69">
+          <div class="kick">04 — Diagnose</div>
+          <h2>Found.<br />Not guessed.</h2>
+          <p>
+            We trace the fault to the exact failing component, then show you
+            what went wrong.
+          </p>
+        </div>
+
+        <div class="cap l" data-in="0.72" data-hold="0.05" data-out="0.84">
+          <div class="kick">05 — Repair</div>
+          <h2>Fixed.<br />Tested.</h2>
+          <p>
+            Replace, rebuild, close it up — then run it on load before it goes
+            back to you.
+          </p>
+        </div>
+
+        <div class="cap fin" data-in="0.89" data-hold="1" data-out="2">
+          <div class="card">
+            <div class="kick">Real Tech · Faisalabad</div>
+            <h2>Power, back on.</h2>
+            <p>Buy, sell or repair — come by near Jhang Road or message us.</p>
+            <div class="row">
+              <a
+                class="btn pri"
+                href="https://wa.me/923006284960?utm_source=chatgpt.com"
+                data-contact="wa"
+                >Chat on WhatsApp</a
+              >
+              <a class="btn sec" href="#visit" data-contact="call"
+                >Call the shop</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="cue" id="cue">Scroll<i></i></div>
+        <div class="hud">
+          <div class="t">Chapter · <b id="hudName">Arrive</b></div>
+          <div class="rail" id="rail"><i id="railFill"></i></div>
+          <div class="pct" id="hudPct">00%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= BRAND PAGE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div>
+        <span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span
+        ><span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span>
+        <span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span
+        ><span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span>
+        <span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span
+        ><span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span>
+        <span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span
+        ><span>SELL <b>●</b> BUY <b>●</b> REPAIR <b>●</b></span>
+      </div>
+    </div>
+
+    <section id="manifesto" class="pad">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal>Why Real Tech</div>
+        <h3 class="big" data-reveal style="--d: 0.08s">
+          The grid fails.<br /><em>Your inverter shouldn't.</em>
+        </h3>
+        <p class="lede" data-reveal style="--d: 0.16s">
+          We buy, sell and repair inverters in Faisalabad, so the lights, fans
+          and work stay running when the power doesn't.
+        </p>
+      </div>
+    </section>
+
+    <section id="services" class="pad" style="padding-top: 0">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal>What we do</div>
+        <h3 class="big" data-reveal style="--d: 0.06s">
+          Three things.<br />Done properly.
+        </h3>
+        <div class="cards">
+          <article class="card" data-reveal style="--d: 0.05s">
+            <div class="num">01</div>
+            <svg viewBox="0 0 48 48">
+              <rect x="9" y="5" width="30" height="38" rx="6" />
+              <rect x="14" y="11" width="20" height="9" rx="2" />
+              <circle cx="17" cy="27" r="1.6" />
+              <circle cx="24" cy="27" r="1.6" />
+              <path d="M15 34h18M15 38h18" />
+            </svg>
+            <h4>Sell</h4>
+            <p>
+              New and used inverters, tested under load before they reach you.
+              We help you choose the right size for your home or shop.
+            </p>
+            <ul>
+              <li>Home UPS</li>
+              <li>Solar hybrid</li>
+              <li>Pure sine wave</li>
+            </ul>
+            <a
+              class="go"
+              href="#visit"
+              data-contact="wa"
+              data-msg="Assalam o Alaikum, I'd like to buy an inverter. Please share what you have."
+              >Ask what's in stock</a
+            >
+          </article>
+          <article class="card" data-reveal style="--d: 0.15s">
+            <div class="num">02</div>
+            <svg viewBox="0 0 48 48">
+              <path d="M6 24h36M30 12l12 12-12 12" />
+              <circle cx="12" cy="24" r="0.1" />
+              <path d="M6 12v24" />
+            </svg>
+            <h4>Buy</h4>
+            <p>
+              Have an old, faulty or upgraded-out inverter? We'll look at it and
+              make you an offer.
+            </p>
+            <ul>
+              <li>Working units</li>
+              <li>Faulty units</li>
+              <li>Upgrades</li>
+            </ul>
+            <a
+              class="go"
+              href="#visit"
+              data-contact="wa"
+              data-msg="Assalam o Alaikum, I want to sell my inverter. Can you give me an offer?"
+              >Get an offer</a
+            >
+          </article>
+          <article class="card" data-reveal style="--d: 0.25s">
+            <div class="num">03</div>
+            <svg viewBox="0 0 48 48">
+              <path
+                d="M33 6a10 10 0 0 0-9 14L7 37a4 4 0 0 0 5 5l17-17a10 10 0 0 0 14-9l-6 5-6-2-2-6z"
+              />
+            </svg>
+            <h4>Repair</h4>
+            <p>
+              We trace the fault to the failing component instead of swapping
+              parts and hoping. Every repair is tested before it goes back.
+            </p>
+            <ul>
+              <li>Board-level</li>
+              <li>Transformers</li>
+              <li>Fans &amp; displays</li>
+            </ul>
+            <a
+              class="go"
+              href="#visit"
+              data-contact="wa"
+              data-msg="Assalam o Alaikum, my inverter has a fault and I need it repaired."
+              >Book a repair</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="pad">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal>How a repair works</div>
+        <h3 class="big" data-reveal style="--d: 0.06s">
+          Four steps.<br />No surprises.
+        </h3>
+        <div class="steps">
+          <div class="step" data-reveal style="--d: 0.05s">
+            <div class="n">01</div>
+            <h5>Bring it in</h5>
+            <p>
+              Drop it at the shop near Jhang Road, or message us the symptoms
+              first.
+            </p>
+          </div>
+          <div class="step" data-reveal style="--d: 0.14s">
+            <div class="n">02</div>
+            <h5>Diagnose</h5>
+            <p>We open it, test it and find the exact fault.</p>
+          </div>
+          <div class="step" data-reveal style="--d: 0.23s">
+            <div class="n">03</div>
+            <h5>Quote &amp; fix</h5>
+            <p>You hear the problem and the price before any work starts.</p>
+          </div>
+          <div class="step" data-reveal style="--d: 0.32s">
+            <div class="n">04</div>
+            <h5>Test &amp; return</h5>
+            <p>We run it on load, then hand it back working.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faults" class="pad">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow" data-reveal>Repairs</div>
+          <h3 class="big" data-reveal style="--d: 0.06s">
+            Common faults.<br />Fixed.
+          </h3>
+          <p class="lede" data-reveal style="--d: 0.12s">
+            If your inverter beeps, trips, won't charge or won't start, we've
+            seen it before.
+          </p>
+          <div class="meter" data-reveal style="--d: 0.18s">
+            <div class="row"><span>Output</span><b>230 V</b></div>
+            <div class="bar"><i id="m1" style="--w: 0%"></i></div>
+            <div class="row"><span>Load</span><b id="m2v">0%</b></div>
+            <div class="bar"><i id="m2" style="--w: 0%"></i></div>
+          </div>
+        </div>
+        <div class="faults" data-reveal style="--d: 0.1s">
+          <div class="fault"><i></i>No output</div>
+          <div class="fault"><i></i>Overload beeping</div>
+          <div class="fault"><i></i>Battery not charging</div>
+          <div class="fault"><i></i>Burnt transformer</div>
+          <div class="fault"><i></i>Blown MOSFETs</div>
+          <div class="fault"><i></i>Fan failure</div>
+          <div class="fault"><i></i>Display errors</div>
+          <div class="fault"><i></i>Short-circuit trips</div>
+          <div class="fault"><i></i>Won't switch to battery</div>
+          <div class="fault"><i></i>Swollen capacitors</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="promise" class="pad">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal>How we work</div>
+        <h3 class="big" data-reveal style="--d: 0.06s">
+          Straight talk.<br />Tested work.
+        </h3>
+        <div class="promises">
+          <div class="prom" data-reveal style="--d: 0.05s">
+            <h4>Honest diagnosis</h4>
+            <p>
+              We tell you what's actually wrong, and what isn't worth fixing.
+            </p>
+          </div>
+          <div class="prom" data-reveal style="--d: 0.15s">
+            <h4>Tested on load</h4>
+            <p>Nothing leaves the shop until it has run under real load.</p>
+          </div>
+          <div class="prom" data-reveal style="--d: 0.25s">
+            <h4>Fair price</h4>
+            <p>Clear quote first. Fair offers when you sell to us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" class="pad">
+      <div class="wrap">
+        <div class="eyebrow" data-reveal>Visit</div>
+        <h3 class="big" data-reveal style="--d: 0.06s">
+          Find us near<br />Jhang Road.
+        </h3>
+        <p class="lede" data-reveal style="--d: 0.12s">
+          Faisalabad. Walk in, call, or send us a message on WhatsApp with a
+          photo of your inverter.
+        </p>
+        <div class="visit-row" data-reveal style="--d: 0.18s">
+          <a
+            class="btn pri"
+            href="https://wa.me/923006284960?utm_source=chatgpt.com"
+            data-contact="wa"
+            >Chat on WhatsApp</a
+          >
+          <a class="btn sec" href="#visit" data-contact="call">Call the shop</a>
+          <a
+            class="btn sec"
+            id="mapLink"
+            target="_blank"
+            rel="noopener"
+            href="https://www.google.com/maps/search/?api=1&query=Jhang+Road+Faisalabad"
+            >Open in Maps</a
+          >
+        </div>
+        <div class="loc" data-reveal style="--d: 0.24s">
+          <svg
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"
+            />
+            <circle cx="12" cy="9.5" r="2.5" />
+          </svg>
+          <span>Real Tech · Near Jhang Road, Faisalabad, Punjab</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="fgrid">
+          <div>
+            <a class="brand" href="#top"
+              ><svg class="bolt" viewBox="0 0 24 24" fill="#ffb400">
+                <path d="M13 2 4 14h6l-1 8 9-12h-6z" />
+              </svg>
+              <span>Real <b>Tech</b></span></a
+            >
+            <p class="about">
+              Inverter sales, buying and repair in Faisalabad.
+            </p>
+            <div class="urdu" lang="ur">We deal in inverters</div>
+          </div>
+          <div>
+            <h6>Services</h6>
+            <ul>
+              <li><a href="#services">Sell</a></li>
+              <li><a href="#services">Buy</a></li>
+              <li><a href="#services">Repair</a></li>
+            </ul>
+          </div>
+          <div>
+            <h6>Company</h6>
+            <ul>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#faults">Common faults</a></li>
+              <li><a href="#promise">How we work</a></li>
+            </ul>
+          </div>
+          <div>
+            <h6>Contact</h6>
+            <ul>
+              <li><a href="#visit" data-contact="call">Call</a></li>
+              <li><a href="https://wa.me/923006284960?utm_source=chatgpt.com" data-contact="wa">WhatsApp</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Jhang+Road+Faisalabad"
+                  target="_blank"
+                  rel="noopener"
+                  >Directions</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fine">
+          <span>© 2026 Real Tech. All rights reserved.</span
+          ><span>Near Jhang Road, Faisalabad, Pakistan</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
